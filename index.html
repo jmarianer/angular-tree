@@ -1,6 +1,8 @@
 <!doctype html>
 <html ng-app="sampleApp">
   <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="tree.js"></script>
     <script type="text/ng-template" id="processArray">
@@ -17,8 +19,9 @@
       <!-- a non-leaf elt is an object with one key, whose value is an array -->
       <span ng-if="!foo.isLeaf(elt)">
         <span ng-repeat="(key, value) in elt">
+          <input type="checkbox" ng-model="expanded">
           {{key}}
-          <ng-include src="'processArray'" ng-init="array = value" />
+          <span class="visible-{{expanded}}" ng-include="'processArray'" ng-init="array = value"></span>
         </span>
       </span>
 
@@ -26,6 +29,7 @@
     </script>
   </head>
   <body>
+    <h1>Insert logo here</h1>
     <div ng-controller="FooCtrl as foo">
       <ng-include src="'processArray'" ng-init="array = foo.graph" />
     </div>
