@@ -1,0 +1,29 @@
+h1 {
+  text-color: pink;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding-left: 10px;
+
+  font-size: 20px;
+}
+
+li {
+  padding-left: 20px;
+}
+
+.expanded-true {
+  transform: rotate(90deg);
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  left: -20px;
+}
+
+.visible-false {
+  display: none;
+}

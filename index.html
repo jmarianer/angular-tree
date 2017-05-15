@@ -15,12 +15,12 @@
       {{foo.variables[elt].name}}
     </script>
 
-    <script type="text/ng-template" id="processElement">
+    <script type="text/ng-template" id="processElement" ng-init="expanded = false">
       <!-- a non-leaf elt is an object with one key, whose value is an array -->
       <span ng-if="!foo.isLeaf(elt)">
         <span ng-repeat="(key, value) in elt">
-          <input type="checkbox" ng-model="expanded">
-          {{key}}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" class="expanded-{{expanded}}"><path d="M7.5 4.5L6.44 5.56 9.88 9l-3.44 3.44L7.5 13.5 12 9z"/></svg>
+          <span ng-click="expanded = !expanded">{{key}}</span>
           <span class="visible-{{expanded}}" ng-include="'processArray'" ng-init="array = value"></span>
         </span>
       </span>
