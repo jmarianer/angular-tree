@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="sampleApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="tree.js"></script>
+    <script type="text/ng-template" id="processArray">
+      <ul>
+        <li ng-include="'processElement'" ng-repeat="elt in array"></li>
+      </ul>
+    </script>
+
+    <script type="text/ng-template" id="processLeaf">
+      {{elt}}
+    </script>
+
+    <script type="text/ng-template" id="processElement">
+      <!-- a non-leaf elt is an object with one key, whose value is an array -->
+      <span ng-if="!foo.isLeaf(elt)">
+        <span ng-repeat="(key, value) in elt">
+          {{key}}
+          <ng-include src="'processArray'" ng-init="array = value" />
+        </span>
+      </span>
+
+      <span ng-if="foo.isLeaf(elt)" ng-include="'processLeaf'"></span>
+    </script>
+  </head>
+  <body>
+    <div ng-controller="FooCtrl as foo">
+      <ng-include src="'processArray'" ng-init="array = foo.graph" />
+    </div>
+  </body>
+</html>
+
