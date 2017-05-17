@@ -1,14 +1,19 @@
-h1 {
-  text-color: pink;
-}
-
-* {
-  font-size: 20px;
+.graph {
+  margin: 20px;
 }
 
 ul {
   list-style-type: none;
   padding: 0px;
+  font-size: 20px;
+}
+
+ul ul {
+  font-size: 18px;
+}
+
+ul ul ul {
+  font-size: 16px;
 }
 
 .nonleaf .subelements ul {

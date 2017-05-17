@@ -2,6 +2,7 @@
 <html ng-app="sampleApp">
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="tree.js"></script>
@@ -31,7 +32,7 @@
   </head>
   <body>
     <h1>Insert logo here</h1>
-    <div ng-controller="FooCtrl as foo">
+    <div class="graph" ng-controller="FooCtrl as foo">
       <ng-include src="'processArray'" ng-init="array = foo.graph" />
     </div>
   </body>
