@@ -1,13 +1,13 @@
 angular.module('components', [])
-  .directive('tree', function() {
-    return {
+  .component('tree', {
       restrict: 'E',
       transclude: true,
-      scope: { tree: '=', variables: '=' },
+      bindings: { tree: '<', variables: '=' },
       controller: function($scope, $element) {
         $scope.isLeaf = function(o) { return typeof(o) === "string" };
       },
       template: `
+    fdsahjkfdas {{tree}} fdsafds
         <span>
           <script type="text/ng-template" id="processArray">
             <ul>
@@ -34,8 +34,8 @@ angular.module('components', [])
           </script>
 
           <ng-include src="'processArray'" ng-init="array = tree" />
+      {{tree}}
         </span>
       `,
       replace: true,
-    }
   });
