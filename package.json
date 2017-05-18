@@ -1,0 +1,19 @@
+{
+	"name": "angular-games",
+	"version": "0.0.1",
+	"description": "",
+	"scripts": {
+		"start": "ts-node -O '{\"noImplicitAny\":true,\"jsx\":\"react\",\"typeRoots\":[\"types\"],\"baseUrl\":\"types\"}' server.ts"
+	},
+	"dependencies": {
+		"@types/express": "",
+		"express": "^4.12.4"
+	},
+	"engines": {
+		"node": "6.9.1"
+	},
+	"repository": {
+		"type": "git"
+	},
+	"license": ""
+}
